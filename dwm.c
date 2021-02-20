@@ -2231,6 +2231,8 @@ tag(const Arg *arg)
 			selmon->sel->switchtag = 0;
 		focus(NULL);
 		arrange(selmon);
+		if(viewontag)
+			view(arg);
 	}
 }
 
