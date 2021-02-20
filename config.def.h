@@ -70,6 +70,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bgu, "-nf", col_fgu, "-sb", col_bdf, "-sf", col_bgu, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
 static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL};
@@ -79,6 +81,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmcmd } },
