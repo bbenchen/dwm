@@ -1,0 +1,8 @@
+# Mac
+*.DS_Store
+
+config.h
+*.o
+dwm
+*.orig
+*.rej
