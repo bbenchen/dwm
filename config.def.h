@@ -79,23 +79,30 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bgu, "-nf", col_fgu, "-sb", col_bdf, "-sf", col_bgu, "-p", "Run:", "-c", "-g", "4", "-l", "10", "-bw", "1", NULL };
+static const char *launchercmd[] = { "/home/chenxianbin/.config/rofi/bin/launcher", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
 static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL};
+static const char *screenshotcmd[] = { "/home/chenxianbin/.config/rofi/bin/screenshot", NULL};
 static const char *locksceencmd[] = { "betterlockscreen", "-l", NULL};
+static const char *powermenucmd[] = { "/home/chenxianbin/.config/rofi/bin/powermenu", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = launchercmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotcmd } },
+	{ 0,                            XK_Print,  spawn,          SHCMD("scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; sxiv -N Screenshot $$(xdg-user-dir PICTURES)/$f'")},
 	{ ControlMask|Mod1Mask,         XK_l,      spawn,          {.v = locksceencmd }},
+	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
