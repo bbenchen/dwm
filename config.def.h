@@ -41,15 +41,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                    instance         title              tags mask  switchtag  isfloating  isterminal  noswallow  monitor */
-	{ "Alacritty",              NULL,            NULL,              0,         0,         0,          1,          0,         -1 },
-	{ "Emacs",                  NULL,            NULL,              1,         1,         0,          0,         -1,         -1 },
-	{ "Firefox",                NULL,            NULL,              1 << 1,    1,         0,          0,         -1,         -1 },
-	{ "Google-chrome",          NULL,            NULL,              1 << 1,    1,         0,          0,         -1,         -1 },
-	{ "TelegramDesktop",        NULL,            NULL,              1 << 2,    3,         1,          0,          0,         -1 },
-	{ "netease-cloud-music",    NULL,            NULL,              0,         0,         1,          0,         -1,         -1 },
-	{ NULL,                     "Screenshot",    NULL,              0,         0,         1,          0,          1,         -1 },
-	{ NULL,                     NULL,            "Event Tester",    0,         0,         0,          0,          1,         -1 }, /* xev */
+	/* class                    instance         title              tags mask  switchtag  iscentered  isfloating  isterminal  noswallow  monitor */
+	{ "Alacritty",              NULL,            NULL,              0,         0,         0,          0,          1,          0,         -1 },
+	{ "Emacs",                  NULL,            NULL,              1,         1,         0,          0,          0,         -1,         -1 },
+	{ "Firefox",                NULL,            NULL,              1 << 1,    1,         0,          0,          0,         -1,         -1 },
+	{ "Google-chrome",          NULL,            NULL,              1 << 1,    1,         0,          0,          0,         -1,         -1 },
+	{ "TelegramDesktop",        NULL,            NULL,              1 << 2,    3,         1,          1,          0,          0,         -1 },
+	{ "netease-cloud-music",    NULL,            NULL,              0,         0,         1,          1,          0,         -1,         -1 },
+	{ NULL,                     "Screenshot",    NULL,              0,         0,         1,          1,          0,          1,         -1 },
+	{ NULL,                     NULL,            "Event Tester",    0,         0,         0,          0,          0,          1,         -1 }, /* xev */
 };
 
 /* layout(s) */
