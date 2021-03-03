@@ -86,7 +86,7 @@ static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL }
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
 static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL};
-static const char *screenshotcmd[] = { "/home/chenxianbin/.config/rofi/bin/screenshot", NULL};
+static const char *screenshotcmd[] = { "maimpick.sh", NULL};
 static const char *locksceencmd[] = { "betterlockscreen", "-l", NULL};
 static const char *powermenucmd[] = { "/home/chenxianbin/.config/rofi/bin/powermenu", NULL};
 
@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotcmd } },
-	{ 0,                            XK_Print,  spawn,          SHCMD("scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; sxiv -N Screenshot $$(xdg-user-dir PICTURES)/$f'")},
+	{ 0,                            XK_Print,  spawn,          SHCMD("pfile=$(xdg-user-dir PICTURES)/pic-selected-\"$(date '+%y%m%d-%H%M-%S').png\" ; maim $pfile ; sxiv -N Screenshot $pfile ; unset pfile")},
 	{ ControlMask|Mod1Mask,         XK_l,      spawn,          {.v = locksceencmd }},
 	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
