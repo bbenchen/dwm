@@ -92,7 +92,6 @@ static const char *emacscmd[]  = { "emacs", NULL };
 static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL};
 static const char *screenshotcmd[] = { "maimpick.sh", NULL};
 static const char *locksceencmd[] = { "betterlockscreen", "-l", NULL};
-static const char *powermenucmd[] = { "/home/chenxianbin/.config/rofi/bin/powermenu", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,7 +104,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotcmd } },
 	{ 0,                            XK_Print,  spawn,          SHCMD("pfile=$(xdg-user-dir PICTURES)/pic-full-\"$(date '+%y%m%d-%H%M-%S').png\" ; maim $pfile ; sxiv -N Screenshot $pfile ; unset pfile")},
 	{ ControlMask|Mod1Mask,         XK_l,      spawn,          {.v = locksceencmd }},
-	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
