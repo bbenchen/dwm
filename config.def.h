@@ -35,6 +35,7 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
+/* barpadding for systray */
 #define BARPADDING_PATCH 1
 
 /* tagging */
