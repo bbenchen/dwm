@@ -82,8 +82,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bgu, "-nf", col_fgu, "-sb", col_bdf, "-sf", col_bgu, "-p", "Run:", "-c", "-g", "4", "-l", "10", "-bw", "1", NULL };
-static const char *launchercmd[] = { "/home/chenxianbin/.config/rofi/bin/launcher", NULL };
+static const char *dmenucmd[] = { "j4-dmenu-desktop", "--dmenu", "dmenu -c -g 4 -l 10 -bw 1", "--term", "alacritty", NULL};
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
@@ -96,8 +95,7 @@ static const char *powermenucmd[] = { "/home/chenxianbin/.config/rofi/bin/powerm
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = launchercmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
