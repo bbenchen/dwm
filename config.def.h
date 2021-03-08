@@ -102,7 +102,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotcmd } },
-	{ 0,                            XK_Print,  spawn,          SHCMD("pfile=$(xdg-user-dir PICTURES)/pic-selected-\"$(date '+%y%m%d-%H%M-%S').png\" ; maim $pfile ; sxiv -N Screenshot $pfile ; unset pfile")},
+	{ 0,                            XK_Print,  spawn,          SHCMD("pfile=$(xdg-user-dir PICTURES)/pic-full-\"$(date '+%y%m%d-%H%M-%S').png\" ; maim $pfile ; sxiv -N Screenshot $pfile ; unset pfile")},
 	{ ControlMask|Mod1Mask,         XK_l,      spawn,          {.v = locksceencmd }},
 	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
