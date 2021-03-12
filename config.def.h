@@ -83,15 +83,16 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "j4-dmenu-desktop", "--dmenu", "dmenu -c -g 4 -l 10 -bw 1", "--term", "alacritty", NULL};
+static const char *dmenucmd[] = { "j4-dmenu-desktop", "--dmenu", "dmenu -c -g 4 -l 10 -bw 1", "--term", "alacritty", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
-static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL};
-static const char *screenshotcmd[] = { "maimpick.sh", NULL};
-static const char *locksceencmd[] = { "betterlockscreen", "-l", NULL};
+static const char *fmcmd[] = { "alacritty", "-e", "ranger", NULL };
+static const char *screenshotcmd[] = { "maimpick.sh", NULL };
+static const char *locksceencmd[] = { "betterlockscreen", "-l", NULL };
+static const char *powermenucmd[] = { "powermenu.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,6 +103,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = fmcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotcmd } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ 0,                            XK_Print,  spawn,          SHCMD("pfile=$(xdg-user-dir PICTURES)/pic-full-\"$(date '+%y%m%d-%H%M-%S').png\" ; maim $pfile ; sxiv -N Screenshot $pfile ; unset pfile")},
 	{ ControlMask|Mod1Mask,         XK_l,      spawn,          {.v = locksceencmd }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
