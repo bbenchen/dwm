@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "j4-dmenu-desktop", "--dmenu", "dmenu -c -g 4 -l 10 -bw 1", "--term", "alacritty", NULL };
+static const char *dmenucmd[] = { "j4-dmenu-desktop", "--dmenu", "dmenu -c -i -g 4 -l 10 -bw 1", "--term", "alacritty", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
